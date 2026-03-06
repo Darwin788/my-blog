@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系 | Darwin788 的博客</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📬</text></svg>">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🚀 Darwin788</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="blog.html" class="nav-link">文章</a></li>
+                <li><a href="archive.html" class="nav-link">归档</a></li>
+                <li><a href="projects.html" class="nav-link">项目</a></li>
+                <li><a href="tags.html" class="nav-link">标签</a></li>
+                <li><a href="about.html" class="nav-link">关于</a></li>
+                <li><a href="contact.html" class="nav-link active">联系</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="section-title">📬 联系方式</h1>
+            
+            <!-- 联系卡片 -->
+            <div class="contact-grid">
+                <div class="card contact-card">
+                    <div class="icon">📧</div>
+                    <h3>邮箱</h3>
+                    <p>448864057@qq.com</p>
+                    <p style="font-size: 0.85rem; color: #999; margin-top: 0.5rem;">工作邮箱，收到后 24 小时内回复</p>
+                </div>
+                <div class="card contact-card">
+                    <div class="icon">🐱</div>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/Darwin788" target="_blank">Darwin788</a></p>
+                    <p style="font-size: 0.85rem; color: #999; margin-top: 0.5rem;">查看我的开源项目和代码</p>
+                </div>
+                <div class="card contact-card">
+                    <div class="icon">💼</div>
+                    <h3>简历网站</h3>
+                    <p><a href="https://darwin788.github.io/resume/" target="_blank">蓝紫版</a></p>
+                    <p><a href="https://darwin788.github.io/resume-brown/" target="_blank">棕色版</a></p>
+                </div>
+                <div class="card contact-card">
+                    <div class="icon">📱</div>
+                    <h3>博客</h3>
+                    <p><a href="https://darwin788.github.io/my-blog/" target="_blank">my-blog</a></p>
+                    <p style="font-size: 0.85rem; color: #999; margin-top: 0.5rem;">查看更多文章和项目</p>
+                </div>
+            </div>
+
+            <!-- 服务咨询 -->
+            <section style="margin-top: 3rem;">
+                <h2 class="section-title">🤝 服务咨询</h2>
+                <div class="about-section">
+                    <h3 style="margin-bottom: 1rem;">我可以提供的服务：</h3>
+                    <ul style="margin-left: 1.5rem; line-height: 2;">
+                        <li><strong>医美内容运营咨询</strong> - 小红书 KOS 账号运营策略</li>
+                        <li><strong>转化率优化</strong> - ROI 从 0.25 提升到 3.5 的方法论</li>
+                        <li><strong>医美文案写作</strong> - 卖点转买点、金字塔结构</li>
+                        <li><strong>IP 打造方案</strong> - 医生个人品牌建设</li>
+                        <li><strong>技术协作</strong> - GitHub Pages 搭建、AI 自动化工具开发</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; color: var(--text-light);">
+                        📧 发送邮件咨询，请注明来意和需求，我会尽快回复。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 在线留言表单（静态演示） -->
+            <section style="margin-top: 3rem;">
+                <h2 class="section-title">💬 留言</h2>
+                <div class="about-section">
+                    <form id="contact-form" onsubmit="submitForm(event)">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">你的邮箱</label>
+                            <input type="email" placeholder="your@email.com" 
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">留言内容</label>
+                            <textarea placeholder="写下你想说的话..." rows="5"
+                                style="width: 100%; padding: 0.75rem; border: 2px solid var(--border); border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn">发送留言</button>
+                    </form>
+                    <p id="form-message" style="margin-top: 1rem; color: var(--primary); display: none;"></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>项目链接</h4>
+                <ul>
+                    <li><a href="https://github.com/Darwin788" target="_blank">GitHub</a></li>
+                    <li><a href="https://darwin788.github.io/resume/" target="_blank">简历网站</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>📧 448864057@qq.com</li>
+                    <li>🐱 GitHub: Darwin788</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Darwin788. 页面托管于 GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitForm(e) {
+            e.preventDefault();
+            const msg = document.getElementById('form-message');
+            msg.style.display = 'block';
+            msg.innerHTML = '📧 感谢留言！由于是静态页面，请直接发送邮件到 <a href="mailto:448864057@qq.com">448864057@qq.com</a>，我会尽快回复。';
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

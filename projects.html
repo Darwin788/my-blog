@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目展示 | Darwin788 的博客</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">🚀 Darwin788</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="blog.html" class="nav-link">文章</a></li>
+                <li><a href="archive.html" class="nav-link">归档</a></li>
+                <li><a href="projects.html" class="nav-link active">项目</a></li>
+                <li><a href="tags.html" class="nav-link">标签</a></li>
+                <li><a href="about.html" class="nav-link">关于</a></li>
+                <li><a href="contact.html" class="nav-link">联系</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="section-title">💼 项目展示</h1>
+            
+            <!-- 项目网格 -->
+            <div class="card-grid" id="projects-list">
+                <div class="card project-card">
+                    <h3>📄 简历网站</h3>
+                    <p>个人简历网站，包含两个版本：现代科技风（蓝紫渐变）和复古印刷风（棕色系）。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">GitHub Pages</span>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://darwin788.github.io/resume/" target="_blank" class="btn btn-outline" style="font-size: 0.9rem;">蓝紫版 →</a>
+                        <a href="https://darwin788.github.io/resume-brown/" target="_blank" class="btn btn-outline" style="font-size: 0.9rem;">棕色版 →</a>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <h3>📱 小红书内容体系</h3>
+                    <p>植发/医美 IP 文案方法论，转化率优化策略，ROI 提升实战经验分享。包含选题库、内容模板、转化漏斗等完整体系。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">内容运营</span>
+                        <span class="tech-tag">KOL/KOS</span>
+                        <span class="tech-tag">小红书</span>
+                        <span class="tech-tag">转化率优化</span>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <h3>🤖 AI 助手开发</h3>
+                    <p>基于 OpenClaw 框架的智能助手开发，实现自动化工作流和智能内容创作。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">OpenClaw</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">AI Automation</span>
+                        <span class="tech-tag">QQ Bot</span>
+                    </div>
+                </div>
+                <div class="card project-card">
+                    <h3>🏥 医美内容矩阵</h3>
+                    <p>医美行业内容营销方法论，包括选题库、内容模板、转化漏斗等完整体系。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">内容运营</span>
+                        <span class="tech-tag">用户增长</span>
+                        <span class="tech-tag">转化优化</span>
+                        <span class="tech-tag">ROI 提升</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技能展示 -->
+            <section style="margin-top: 3rem;">
+                <h2 class="section-title">🛠️ 技能树</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>📢 内容营销</h3>
+                        <ul style="margin-left: 1.5rem; color: var(--text-light);">
+                            <li>小红书 KOS 账号运营</li>
+                            <li>医美 IP 打造</li>
+                            <li>转化率优化 (ROI 0.25→3.5)</li>
+                            <li>内容矩阵搭建</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>✍️ 文案写作</h3>
+                        <ul style="margin-left: 1.5rem; color: var(--text-light);">
+                            <li>卖点→买点转换</li>
+                            <li>金字塔文案结构</li>
+                            <li>转化内容审核</li>
+                            <li>医美专业文案</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>💻 技术能力</h3>
+                        <ul style="margin-left: 1.5rem; color: var(--text-light);">
+                            <li>Git/GitHub Pages</li>
+                            <li>HTML/CSS/JS</li>
+                            <li>OpenClaw 技能开发</li>
+                            <li>AI 自动化</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>📊 数据分析</h3>
+                        <ul style="margin-left: 1.5rem; color: var(--text-light);">
+                            <li>ROI 分析与优化</li>
+                            <li>用户行为分析</li>
+                            <li>转化漏斗优化</li>
+                            <li>A/B 测试</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="blog.html">文章</a></li>
+                    <li><a href="about.html">关于我</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>项目链接</h4>
+                <ul>
+                    <li><a href="https://github.com/Darwin788" target="_blank">GitHub</a></li>
+                    <li><a href="https://darwin788.github.io/resume/" target="_blank">简历网站</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>📧 448864057@qq.com</li>
+                    <li>🐱 GitHub: Darwin788</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Darwin788. 页面托管于 GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
