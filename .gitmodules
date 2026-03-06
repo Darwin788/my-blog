@@ -1,0 +1,4 @@
+[submodule "resume"]
+    path = resume
+    url = https://github.com/Darwin788/resume
+    branch = gh-pages
