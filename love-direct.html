@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>❤️ 给特别的人</title>
+    <style>
+        body{font-family:sans-serif;background:#ffe6f2;text-align:center;padding:40px;}
+        .heart{font-size:60px;animation:beat 1s infinite;}
+        @keyframes beat{50%{transform:scale(1.2);}}
+        .box{max-width:500px;margin:auto;background:white;padding:30px;border-radius:20px;box-shadow:0 10px 30px rgba(255,105,180,0.2);}
+        h1{color:#e91e63;}
+        .code{background:#fff9e6;padding:15px;border-radius:10px;margin:20px 0;text-align:left;font-family:monospace;}
+        button{background:linear-gradient(45deg,#ff6b9d,#6b66ff);color:white;border:none;padding:12px 25px;border-radius:25px;font-size:16px;cursor:pointer;margin:10px;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="heart">💖</div>
+        <h1>给特别的人</h1>
+        <p>代码不会说谎，就像我对你的感觉。</p>
+        <div class="code">
+            const myHeart = {<br>
+            &nbsp;&nbsp;owner: "你",<br>
+            &nbsp;&nbsp;beats: "forever",<br>
+            &nbsp;&nbsp;reason: "because of you"<br>
+            };
+        </div>
+        <button onclick="showLove()">💝 点击查看真心话</button>
+        <div id="secret" style="display:none;margin-top:20px;padding:15px;background:linear-gradient(45deg,#9d4edd,#ff6b6b);color:white;border-radius:15px;">
+            <p><strong>💌 给你：</strong></p>
+            <p>在所有代码中，只有关于你的部分<br>永远不需要调试，永远完美运行。</p>
+            <p>如果爱是一段程序，那你就是我<br>永远不会报错的完美算法。</p>
+        </div>
+    </div>
+    <script>
+        function showLove(){
+            document.getElementById('secret').style.display='block';
+            document.querySelector('button').innerHTML='💖 真心已送达 💖';
+            document.querySelector('button').disabled=true;
+            for(let i=0;i<10;i++){
+                setTimeout(()=>{
+                    let h=document.createElement('div');
+                    h.innerHTML='❤️';
+                    h.style.position='fixed';
+                    h.style.left=Math.random()*100+'vw';
+                    h.style.top='-30px';
+                    h.style.fontSize='30px';
+                    h.style.opacity='0.8';
+                    document.body.appendChild(h);
+                    let anim=h.animate([
+                        {transform:'translateY(0)',opacity:1},
+                        {transform:'translateY(100vh)',opacity:0}
+                    ],2000);
+                    anim.onfinish=()=>h.remove();
+                },i*300);
+            }
+        }
+    </script>
+</body>
+</html>
