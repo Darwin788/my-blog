@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1770347327893
+    },
+    "self-improving-agent": {
+      "version": "1.0.11",
+      "installedAt": 1772763193079
+    },
+    "proactive-agent-lite": {
+      "version": "1.0.0",
+      "installedAt": 1772773506716
+    }
+  }
+}
