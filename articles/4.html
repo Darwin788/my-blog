@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何用 OpenClaw 搭建智能助手 | Darwin788 的博客</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .article-content { background: var(--white); border-radius: var(--radius); padding: 3rem; box-shadow: var(--shadow); }
+        .article-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 2px solid var(--border); }
+        .article-meta { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: #999; margin-bottom: 1rem; }
+        .article-title { font-size: 2rem; color: var(--secondary); margin-bottom: 1.5rem; line-height: 1.3; }
+        .article-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .article-body { line-height: 1.9; color: var(--text); }
+        .article-body h2 { font-size: 1.5rem; color: var(--secondary); margin: 2rem 0 1rem; }
+        .article-body h3 { font-size: 1.2rem; color: var(--secondary); margin: 1.5rem 0 0.75rem; }
+        .article-body p { margin-bottom: 1rem; }
+        .article-body ul, .article-body ol { margin: 1rem 0 1rem 1.5rem; }
+        .article-body li { margin-bottom: 0.5rem; }
+        .article-body blockquote { background: var(--bg); border-left: 4px solid var(--primary); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+        .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .article-body th, .article-body td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        .article-body th { background: var(--bg); font-weight: 600; }
+        .article-body code { background: var(--bg); padding: 0.2rem 0.5rem; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+        .article-body pre { background: var(--secondary); color: #fff; padding: 1rem 1.5rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; }
+        .article-body pre code { background: none; padding: 0; color: #fff; }
+        .toc { background: var(--bg); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }
+        .toc h3 { margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem; }
+        .toc ul { list-style: none; margin: 0; }
+        .toc li { margin-bottom: 0.5rem; }
+        .toc a { color: var(--text-light); }
+        .step { background: var(--bg); border-radius: 8px; padding: 1.5rem; margin: 1rem 0; border-left: 4px solid var(--primary); }
+        .step h4 { margin-top: 0; color: var(--primary); }
+        @media (max-width: 768px) { .article-content { padding: 1.5rem; } .article-title { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">🚀 Darwin788</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">首页</a></li>
+                <li><a href="../blog.html" class="nav-link">文章</a></li>
+                <li><a href="../archive.html" class="nav-link">归档</a></li>
+                <li><a href="../projects.html" class="nav-link">项目</a></li>
+                <li><a href="../tags.html" class="nav-link">标签</a></li>
+                <li><a href="../about.html" class="nav-link">关于</a></li>
+                <li><a href="../contact.html" class="nav-link">联系</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="container">
+            <article class="article-content">
+                <header class="article-header">
+                    <div class="article-meta"><span>📅 2026-03-03</span><span>👤 Darwin788</span><span>⏱️ 12 分钟阅读</span></div>
+                    <h1 class="article-title">如何用 OpenClaw 搭建智能助手</h1>
+                    <div class="article-tags">
+                        <a href="../blog.html?tag=AI" class="tag">AI</a>
+                        <a href="../blog.html?tag=OpenClaw" class="tag">OpenClaw</a>
+                        <a href="../blog.html?tag=自动化" class="tag">自动化</a>
+                    </div>
+                </header>
+                <div class="toc">
+                    <h3>📑 文章目录</h3>
+                    <ul>
+                        <li><a href="#part1">一、什么是 OpenClaw？</a></li>
+                        <li><a href="#part2">二、安装与环境准备</a></li>
+                        <li><a href="#part3">三、创建第一个技能</a></li>
+                        <li><a href="#part4">四、配置聊天渠道</a></li>
+                        <li><a href="#part5">五、高级功能：技能市场</a></li>
+                        <li><a href="#part6">六、实战案例：医美文案助手</a></li>
+                    </ul>
+                </div>
+                <div class="article-body">
+                    <p>AI 助手已经成为工作和生活的标配，但你是否想过<strong>搭建一个属于自己的智能助手</strong>？</p>
+                    <p>OpenClaw 是一个开源的 AI 助手框架，帮你快速构建个性化 AI 助手，实现自动化工作流。</p>
+                    <h2 id="part1">一、什么是 OpenClaw？</h2>
+                    <p><strong>OpenClaw</strong> 是一个开源的 AI 助手框架，特点：</p>
+                    <table>
+                        <tr><th>特性</th><th>说明</th></tr>
+                        <tr><td>开源免费</td><td>GitHub 开源，无隐藏费用</td></tr>
+                        <tr><td>多渠道支持</td><td>支持 QQ、Telegram、微信、Discord 等</td></tr>
+                        <tr><td>技能市场</td><td>可安装第三方技能，也可自己开发</td></tr>
+                        <tr><td>高度定制</td><td>可自定义提示词、模型、工作流</td></tr>
+                        <tr><td>本地部署</td><td>数据保存在本地，隐私安全</td></tr>
+                    </table>
+                    <h2 id="part2">二、安装与环境准备</h2>
+                    <div class="step">
+                        <h4>步骤 1：安装 Node.js</h4>
+                        <p>OpenClaw 基于 Node.js 开发，需要先安装 Node.js 环境。</p>
+                        <p>官网下载：https://nodejs.org/ （建议 v18 以上版本）</p>
+                        <p>验证安装：<code>node -v</code></p>
+                    </div>
+                    <div class="step">
+                        <h4>步骤 2：安装 OpenClaw</h4>
+                        <pre>npm install -g openclaw</pre>
+                    </div>
+                    <div class="step">
+                        <h4>步骤 3：初始化项目</h4>
+                        <pre>openclaw init my-assistant
+cd my-assistant
+npm install</pre>
+                    </div>
+                    <div class="step">
+                        <h4>步骤 4：配置模型</h4>
+                        <p>修改 <code>config/default.json</code>，配置你的 API Key：</p>
+                        <pre>{
+  "model": {
+    "provider": "qianfan",
+    "apiKey": "your-api-key-here"
+  }
+}</pre>
+                    </div>
+                    <h2 id="part3">三、创建第一个技能</h2>
+                    <p>OpenClaw 的核心是「技能(Skill)」，一个技能可以完成特定任务。</p>
+                    <div class="step">
+                        <h4>创建技能文件</h4>
+                        <p>在 <code>skills/</code> 目录下创建新技能：</p>
+                        <pre>├── skills/
+│   └── my-first-skill/
+│       ├── SKILL.md      # 技能说明
+│       └── handler.js    # 技能逻辑</pre>
+                    </div>
+                    <div class="step">
+                        <h4>编写技能逻辑</h4>
+                        <pre>// handler.js
+module.exports = async (context) => {
+  const { message, args } = context;
+  
+  // 处理用户输入
+  const userInput = args.join(' ');
+  
+  // 返回响应
+  return `你刚才说的是：${userInput}`;
+};</pre>
+                    </div>
+                    <div class="step">
+                        <h4>编写技能说明</h4>
+                        <pre># 我的第一个技能
+
+## 功能
+echo 用户输入的内容
+
+## 使用方式
+!echo [内容]
+
+## 示例
+!echo Hello World</pre>
+                    </div>
+                    <h2 id="part4">四、配置聊天渠道</h2>
+                    <p>OpenClaw 支持多种聊天渠道，以下是 QQ 渠道的配置：</p>
+                    <div class="step">
+                        <h4>安装 QQ 适配器</h4>
+                        <pre>openclaw install qqbot</pre>
+                    </div>
+                    <div class="step">
+                        <h4>配置 QQ 登录</h4>
+                        <p>修改 <code>config/qqbot.json</code>：</p>
+                        <pre>{
+  "protocol": "平板",
+  "deviceInfo": {
+    "product": "MI 6",
+    "model": "sagit",
+    "androidVersion": 29
+  }
+}</pre>
+                    </div>
+                    <h2 id="part5">五、高级功能：技能市场</h2>
+                    <p>OpenClaw 有技能市场，可以直接安装现成的技能：</p>
+                    <pre># 查看可用技能
+openclaw search [关键词]
+
+# 安装技能
+openclaw install [技能名]
+
+# 查看已安装技能
+openclaw list</pre>
+                    <h3>常用技能推荐</h3>
+                    <table>
+                        <tr><th>技能名</th><th>功能</th></tr>
+                        <tr><td>weather</td><td>查询天气</td></tr>
+                        <tr><td>qqbot-cron</td><td>定时提醒</td></tr>
+                        <tr><td>agent-browser</td><td>浏览器自动化</td></tr>
+                        <tr><td>proactive-agent-lite</td><td>主动式 AI 助手</td></tr>
+                    </table>
+                    <h2 id="part6">六、实战案例：医美文案助手</h2>
+                    <p>下面演示如何创建一个「医美文案助手」技能：</p>
+                    <div class="step">
+                        <h4>创建技能目录</h4>
+                        <pre>mkdir -p skills/kos-copywriter
+cd skills/kos-copywriter</pre>
+                    </div>
+                    <div class="step">
+                        <h4>编写 SKILL.md</h4>
+                        <pre># 医美文案助手
+
+## 功能
+- 生成植发相关文案
+- 优化现有文案
+- 卖点转买点
+
+## 使用方式
+!copy 主题
+!optimize 原文案</pre>
+                    </div>
+                    <div class="step">
+                        <h4>编写 handler.js</h4>
+                        <pre>module.exports = async (context) => {
+  const { args, model } = context;
+  
+  if (args[0] === 'copy') {
+    // 生成文案
+    const topic = args.slice(1).join(' ');
+    return await model.complete(`请为以下医美主题写一篇小红书风格的文案：${topic}`);
+  }
+  
+  if (args[0] === 'optimize') {
+    // 优化文案
+    const content = args.slice(1).join(' ');
+    return await model.complete(`请将以下医美文案进行卖点转买点优化：\n${content}`);
+  }
+  
+  return '用法：!copy 主题 或 !optimize 原文案';
+};</pre>
+                    </div>
+                    <h2>写在最后</h2>
+                    <p>OpenClaw 的强大之处在于<strong>可扩展性</strong>。你可以通过技能市场获取功能，也可以自己开发定制化技能。</p>
+                    <p>更重要的是，OpenClaw 支持<strong>本地部署</strong>，数据完全掌握在自己手中。</p>
+                    <p>如果你在搭建过程中遇到问题，或者想了解更多 AI 自动化的玩法，欢迎 <a href="../contact.html">联系我</a>。</p>
+                </div>
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border);">
+                    <p style="text-align: center;">
+                        <a href="../blog.html" class="btn btn-outline">← 返回文章列表</a>
+                        <a href="../contact.html" class="btn" style="margin-left: 1rem;">咨询合作</a>
+                    </p>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>快速导航</h4><ul><li><a href="../index.html">首页</a></li><li><a href="../blog.html">文章</a></li><li><a href="../about.html">关于我</a></li></ul></div>
+            <div class="footer-section"><h4>项目链接</h4><ul><li><a href="https://github.com/Darwin788" target="_blank">GitHub</a></li><li><a href="https://darwin788.github.io/resume/" target="_blank">简历网站</a></li></ul></div>
+            <div class="footer-section"><h4>联系方式</h4><ul><li>📧 448864057@qq.com</li><li>🐱 GitHub: Darwin788</li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Darwin788. 页面托管于 GitHub Pages.</p></div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>
