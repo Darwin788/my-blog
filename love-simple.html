@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ 给你的特别礼物</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fdf2f8 0%, #ffe4e6 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            text-align: center;
+            border: 3px solid #f472b6;
+            position: relative;
+        }
+        .heart {
+            font-size: 50px;
+            animation: heartbeat 1.2s infinite;
+            margin-bottom: 15px;
+        }
+        @keyframes heartbeat {
+            0%,100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        h1 {
+            color: #db2777;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .code {
+            background: #fef3c7;
+            border: 2px dashed #f59e0b;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: monospace;
+            text-align: left;
+            position: relative;
+        }
+        .code::before {
+            content: '💻 代码表白';
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: white;
+            padding: 0 8px;
+            color: #f59e0b;
+            font-weight: bold;
+        }
+        button {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(236,72,153,0.3);
+        }
+        .secret {
+            opacity: 0;
+            transition: all 1s;
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #a78bfa, #818cf8);
+            color: white;
+            border-radius: 15px;
+            transform: translateY(20px);
+        }
+        .secret.show { opacity: 1; transform: translateY(0); }
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="heart">💖</div>
+        <h1>给特别的人</h1>
+        <div class="message">
+            <p>有人说，最浪漫的事就是把爱写进代码里。</p>
+            <p>因为代码不会说谎，永远忠实执行写下的每一行逻辑。</p>
+            <p>就像我的心情，清晰、确定、不可动摇。</p>
+        </div>
+        <div class="code">
+            <pre>const heart = {
+    owner: "你",
+    beats: "forever",
+    rhythm: ["ba-dum", "ba-dum"],
+    reason: "because of you",
+    
+    beatFor(person) {
+        if (person === "你") {
+            return "💓ba-dum ba-dum💓";
+        }
+        return "still...";
+    }
+};</pre>
+        </div>
+        <button onclick="showLove()">点击查看真心话</button>
+        <div class="secret" id="secret">
+            <p><strong>💌 给你的话：</strong></p>
+            <p>在所有代码中，只有关于你的那部分<br>永远不需要调试，永远完美运行。</p>
+            <p>如果爱是一段程序，那你就是我<br>永远不会报错的完美算法。</p>
+            <p style="margin-top:10px;font-style:italic;">—— 用代码表白的人</p>
+        </div>
+        <div class="footer">
+            <p>💝 用心编写 · 心意永存 💝</p>
+            <p style="font-size:12px;margin-top:5px;">访问链接直接表白！</p>
+        </div>
+    </div>
+    <script>
+        function showLove() {
+            document.getElementById('secret').classList.add('show');
+            document.querySelector('button').innerHTML = '💝 你已发现我的真心 💝';
+            document.querySelector('button').disabled = true;
+            document.querySelector('.heart').innerHTML = '💗';
+            createHearts();
+        }
+        function createHearts() {
+            for(let i=0;i<15;i++) {
+                setTimeout(() => {
+                    let h = document.createElement('div');
+                    h.innerHTML = '❤️';
+                    h.style.position='fixed';
+                    h.style.left=Math.random()*100+'vw';
+                    h.style.top='-50px';
+                    h.style.fontSize=Math.random()*20+20+'px';
+                    h.style.opacity='0.7';
+                    document.body.appendChild(h);
+                    let anim = h.animate([
+                        {transform:'translateY(0)',opacity:1},
+                        {transform:'translateY(100vh)',opacity:0}
+                    ],{duration:3000});
+                    anim.onfinish=()=>h.remove();
+                }, i*200);
+            }
+        }
+    </script>
+</body>
+</html>
