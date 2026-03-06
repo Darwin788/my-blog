@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ 给你的特别礼物</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .love-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fdf2f8 0%, #ffe4e6 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .love-page::before {
+            content: '❤️';
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .love-page::after {
+            content: '💖';
+            position: absolute;
+            right: 10%;
+            bottom: 20%;
+            font-size: 8rem;
+            opacity: 0.1;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .love-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border: 3px solid #f472b6;
+        }
+        
+        .heart {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: heartbeat 1.2s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .love-card h1 {
+            color: #db2777;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .love-message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #4b5563;
+            margin-bottom: 2rem;
+            text-align: left;
+            padding: 0 1rem;
+        }
+        
+        .code-block {
+            background: #fef3c7;
+            border: 2px dashed #f59e0b;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+        
+        .code-block::before {
+            content: '💻 代码表白';
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            color: #f59e0b;
+            font-weight: bold;
+        }
+        
+        .hidden-message {
+            opacity: 0;
+            transition: all 1s ease;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #a78bfa, #818cf8);
+            color: white;
+            border-radius: 15px;
+            transform: translateY(20px);
+        }
+        
+        .hidden-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .secret-button {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+        }
+        
+        .secret-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+        }
+        
+        .countdown {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        
+        .footer-love {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="love-page">
+        <div class="love-card">
+            <div class="heart">💖</div>
+            <h1>给特别的人</h1>
+            
+            <div class="love-message">
+                <p>有人说，最浪漫的事就是把爱写进代码里。</p>
+                <p>因为代码不会说谎，永远忠实执行写下的每一行逻辑。</p>
+                <p>就像我的心情，清晰、确定、不可动摇。</p>
+            </div>
+            
+            <div class="code-block">
+                <pre><code>const heart = {
+    owner: "你",
+    beats: "forever",
+    rhythm: ["ba-dum", "ba-dum"],
+    reason: "because of you",
+    
+    beatFor(person) {
+        if (person === "你") {
+            return "💓ba-dum ba-dum💓";
+        }
+        return "still...";
+    },
+    
+    getPromise() {
+        return new Promise((resolve) => {
+            resolve("❤️ 我会一直在这里 ❤️");
+        });
+    }
+};
+
+// 我的心跳节奏
+for (let moment of heart.beats) {
+    console.log(heart.beatFor("你"));
+}
+
+// 这份承诺
+heart.getPromise().then(message => {
+    console.log(message);
+});</code></pre>
+            </div>
+            
+            <button class="secret-button" onclick="revealMessage()">
+                点击查看隐藏的真心话
+            </button>
+            
+            <div class="hidden-message" id="secret-message">
+                <p style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;">💌 给你的话：</p>
+                <p>在所有的代码中，只有关于你的那部分<br>永远不需要调试，永远完美运行。</p>
+                <p>如果爱是一段程序，那你就是我<br>永远不会报错的完美算法。</p>
+                <p style="margin-top: 1rem; font-style: italic;">—— 用代码表白的人</p>
+            </div>
+            
+            <div class="countdown">
+                <p>这个页面将在 <span id="counter">10</span> 秒后自动保存到记忆中...</p>
+            </div>
+            
+            <div class="footer-love">
+                <p>💝 用心编写 · 代码可删除 · 心意永存 💝</p>
+                <p style="font-size: 0.8rem; margin-top: 0.5rem;">分享链接：<code id="share-link">https://darwin788.github.io/my-blog/love.html</code></p>
+                <button onclick="copyLink()" style="margin-top: 0.5rem; background: #60a5fa; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">复制链接</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 倒计时
+        let countdown = 10;
+        const counter = document.getElementById('counter');
+        const timer = setInterval(() => {
+            countdown--;
+            counter.textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(timer);
+                counter.textContent = "已存入记忆";
+                counter.style.color = "#10b981";
+            }
+        }, 1000);
+        
+        // 显示隐藏消息
+        function revealMessage() {
+            const message = document.getElementById('secret-message');
+            message.classList.add('show');
+            
+            // 添加浪漫特效
+            document.querySelector('.heart').innerHTML = '💗';
+            document.querySelector('.heart').style.animation = 'heartbeat 0.8s infinite';
+            
+            // 更改按钮文字
+            const button = document.querySelector('.secret-button');
+            button.textContent = '💝 你已发现我的真心 💝';
+            button.style.background = 'linear-gradient(135deg, #10b981, #3b82f6)';
+            button.disabled = true;
+            
+            // 播放爱心动画
+            createHearts();
+        }
+        
+        // 创建飘落的心
+        function createHearts() {
+            const hearts = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍'];
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '-50px';
+                    heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+                    heart.style.zIndex = '1000';
+                    heart.style.opacity = '0.7';
+                    heart.style.pointerEvents = 'none';
+                    
+                    document.body.appendChild(heart);
+                    
+                    // 动画
+                    const animation = heart.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: Math.random() * 3000 + 2000,
+                        easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                    });
+                    
+                    animation.onfinish = () => heart.remove();
+                }, i * 200);
+            }
+        }
+        
+        // 复制链接
+        function copyLink() {
+            const link = document.getElementById('share-link').textContent;
+            navigator.clipboard.writeText(link).then(() => {
+                alert('✨ 链接已复制！发给TA吧~');
+            });
+        }
+        
+        // 页面加载效果
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.love-card').style.opacity = '0';
+            document.querySelector('.love-card').style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                document.querySelector('.love-card').style.transition = 'all 0.8s ease';
+                document.querySelector('.love-card').style.opacity = '1';
+                document.querySelector('.love-card').style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
