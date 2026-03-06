@@ -1,0 +1,13 @@
+# Jekyll 忽略配置
+love.html
+love-simple.html
+
+# 其他需要排除的文件
+*.log
+node_modules/
+.sass-cache/
+.jekyll-cache/
+__pycache__/
+
+# 保持默认设置
+exclude: [".jekyll-cache", "Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
