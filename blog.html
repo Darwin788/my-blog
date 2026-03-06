@@ -8,7 +8,6 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
 </head>
 <body>
-    <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">🚀 Darwin788</a>
@@ -22,9 +21,7 @@
                 <li><a href="contact.html" class="nav-link">联系</a></li>
             </ul>
             <div class="nav-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
@@ -33,20 +30,100 @@
         <div class="container">
             <h1 class="section-title">📝 所有文章</h1>
             
-            <!-- 搜索框 -->
             <div style="margin-bottom: 2rem;">
                 <input type="text" id="search-input" placeholder="🔍 搜索文章..." 
-                    style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem;">
+                    style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 10px; font-size: 1rem;"
+                    oninput="filterArticles(this.value)">
             </div>
 
-            <!-- 文章列表 -->
             <div class="card-grid" id="articles-list">
-                <!-- 由 JS 动态渲染 -->
+                <article class="card article-card" onclick="location.href='articles/1.html'">
+                    <div class="meta">2026-03-06 · 运营干货</div>
+                    <h3>植发文案这样写，转化率提升 14 倍</h3>
+                    <p class="excerpt">从 ROI 0.25 到 3.5，我总结了一套植发文案的转化公式。分享医美内容运营的实战经验。</p>
+                    <div class="article-tags"><span class="tag">医美运营</span><span class="tag">内容营销</span><span class="tag">转化率</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/2.html'">
+                    <div class="meta">2026-03-05 · 平台运营</div>
+                    <h3>小红书医生 KOS 账号运营指南</h3>
+                    <p class="excerpt">医生如何在小红书打造个人 IP？这份运营指南包含内容策略、选题方向和变现路径。</p>
+                    <div class="article-tags"><span class="tag">小红书</span><span class="tag">KOS</span><span class="tag">医生IP</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/3.html'">
+                    <div class="meta">2026-03-04 · 文案技巧</div>
+                    <h3>卖点 vs 买点：医美文案的底层逻辑</h3>
+                    <p class="excerpt">用户不关心你能做什么，只关心他能得到什么。本文深入解析卖点与买点的转换方法。</p>
+                    <div class="article-tags"><span class="tag">文案写作</span><span class="tag">用户心理</span><span class="tag">医美</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/4.html'">
+                    <div class="meta">2026-03-03 · 技术实践</div>
+                    <h3>如何用 OpenClaw 搭建智能助手</h3>
+                    <p class="excerpt">使用 OpenClaw 框架快速构建个性化 AI 助手，实现自动化工作流和智能内容创作。</p>
+                    <div class="article-tags"><span class="tag">AI</span><span class="tag">OpenClaw</span><span class="tag">自动化</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/5.html'">
+                    <div class="meta">2026-03-02 · 专业知识</div>
+                    <h3>植发美学：颞角、头顶、鬓角的设计要点</h3>
+                    <p class="excerpt">植发不只是降低发际线，颞角、头顶、鬓角三个位置才是颜值的分水岭。</p>
+                    <div class="article-tags"><span class="tag">植发</span><span class="tag">医美</span><span class="tag">美学设计</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/6.html'">
+                    <div class="meta">2026-03-01 · 运营干货</div>
+                    <h3>内容营销 ROI 优化实战复盘</h3>
+                    <p class="excerpt">医美内容营销如何从亏损到盈利？复盘一个真实案例，从 0.25 到 3.5 的完整路径。</p>
+                    <div class="article-tags"><span class="tag">ROI</span><span class="tag">内容营销</span><span class="tag">数据分析</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/7.html'">
+                    <div class="meta">2026-02-28 · 专业知识</div>
+                    <h3>发际线设计指南：脸型与发际线的完美搭配</h3>
+                    <p class="excerpt">发际线不是越低越好，不同脸型适合不同的发际线。本文详解圆形、方形、长形、心形脸的发际线设计要点。</p>
+                    <div class="article-tags"><span class="tag">植发</span><span class="tag">美学设计</span><span class="tag">脸型</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/8.html'">
+                    <div class="meta">2026-02-27 · 专业知识</div>
+                    <h3>植发手术全流程详解</h3>
+                    <p class="excerpt">从咨询到恢复，植发手术全流程完整拆解。包含术前准备、手术当天、术后护理各阶段的注意事项。</p>
+                    <div class="article-tags"><span class="tag">植发</span><span class="tag">手术</span><span class="tag">护理</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/9.html'">
+                    <div class="meta">2026-02-26 · 文案技巧</div>
+                    <h3>小红书爆款标题的 5 个公式</h3>
+                    <p class="excerpt">小红书用户 0.5 秒决定是否点击，标题决定了 80% 的流量。本文分享 5 个经过验证的爆款标题公式。</p>
+                    <div class="article-tags"><span class="tag">小红书</span><span class="tag">文案写作</span><span class="tag">流量</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/10.html'">
+                    <div class="meta">2026-02-25 · 运营干货</div>
+                    <h3>医美私域运营：从公域到私域的全链路</h3>
+                    <p class="excerpt">公域获客成本越来越高，私域运营成为医美机构的必备能力。详解从加微到成交的完整私域运营策略。</p>
+                    <div class="article-tags"><span class="tag">私域</span><span class="tag">运营</span><span class="tag">转化</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/11.html'">
+                    <div class="meta">2026-02-24 · 专业知识</div>
+                    <h3>植发技术演进史：从 FUT 到不剃发植发</h3>
+                    <p class="excerpt">植发技术经历了怎样的演进？FUT、FUE、不剃发植发、微针植发各有优缺点，一文讲清楚该怎么选。</p>
+                    <div class="article-tags"><span class="tag">植发</span><span class="tag">技术</span><span class="tag">手术</span></div>
+                </article>
+
+                <article class="card article-card" onclick="location.href='articles/12.html'">
+                    <div class="meta">2026-02-23 · 运营干货</div>
+                    <h3>医美咨询师必备话术手册</h3>
+                    <p class="excerpt">医美咨询师如何成交流程？本文整理常见场景的话术模板，包括初诊接待、需求挖掘、方案推荐、价格谈判、售后维护。</p>
+                    <div class="article-tags"><span class="tag">医美</span><span class="tag">销售</span><span class="tag">话术</span></div>
+                </article>
             </div>
         </div>
     </main>
 
-    <!-- 页脚 -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -77,7 +154,18 @@
         </div>
     </footer>
 
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        }
+        function filterArticles(query) {
+            query = query.toLowerCase();
+            document.querySelectorAll('.article-card').forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const excerpt = card.querySelector('.excerpt').textContent.toLowerCase();
+                card.style.display = (title.includes(query) || excerpt.includes(query)) ? 'block' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
