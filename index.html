@@ -3,183 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darwin788 的博客 | 医美内容运营专家</title>
-    <meta name="description" content="秦学li（Darwin788）的个人博客，分享医美内容运营、小红书KOS账号运营、转化率优化等干货。">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <title>Darwin788 的博客</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .project-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-2px);
+        }
+        .project-card h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">🚀 Darwin788</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">首页</a></li>
-                <li><a href="blog.html" class="nav-link">文章</a></li>
-                <li><a href="archive.html" class="nav-link">归档</a></li>
-                <li><a href="projects.html" class="nav-link">项目</a></li>
-                <li><a href="tags.html" class="nav-link">标签</a></li>
-                <li><a href="about.html" class="nav-link">关于</a></li>
-                <li><a href="contact.html" class="nav-link">联系</a></li>
-            </ul>
-            <div class="nav-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header>
+        <h1>Darwin788 的博客</h1>
+        <p class="subtitle">医美内容运营专家 · 小红书IP打造 · 技术探索</p>
+        <p>这里是秦学李（Darwin788）的个人空间，记录医美行业洞察、内容营销思考和技术实践。</p>
+    </header>
+
+    <section>
+        <h2>近期项目</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>简历网站</h3>
+                <p>个人简历网站，包含两个版本：现代科技风和复古印刷风。</p>
+                <p><a href="https://darwin788.github.io/resume/" target="_blank">蓝紫版</a> · <a href="https://darwin788.github.io/resume-brown/" target="_blank">棕色版</a></p>
+            </div>
+            <div class="project-card">
+                <h3>小红书内容体系</h3>
+                <p>植发/医美IP文案方法论，转化率优化策略，ROI提升经验。</p>
+            </div>
+            <div class="project-card">
+                <h3>AI助手开发</h3>
+                <p>OpenClaw技能开发，自动化工作流，智能内容创作。</p>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <main class="main-content">
-        <div class="container">
-            <!-- 英雄区 -->
-            <section class="hero">
-                <h1>秦学 li (Darwin788)</h1>
-                <p class="subtitle">医美内容运营专家 · 小红书 KOS 账号运营 · ROI 优化专家</p>
-                <p>3年+医美内容运营经验，ROI 从 0.25 提升至 3.5（14倍提升），累计 40万+ 线上销售业绩</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">篇文章</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">个项目</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">个标签</span>
-                    </div>
-                </div>
-            </section>
+    <section style="margin-top: 3rem;">
+        <h2>联系方式</h2>
+        <ul>
+            <li>GitHub: <a href="https://github.com/Darwin788" target="_blank">Darwin788</a></li>
+            <li>邮箱: 448864057@qq.com</li>
+        </ul>
+    </section>
 
-            <!-- 最新文章 -->
-            <section class="mb-2">
-                <h2 class="section-title">📝 最新文章</h2>
-                <div class="card-grid" id="latest-articles">
-                    <!-- 由 JS 动态渲染 -->
-                </div>
-                <p class="text-center mt-1">
-                    <a href="blog.html" class="btn">查看更多 →</a>
-                </p>
-            </section>
-
-            <!-- 项目展示 -->
-            <section class="mb-2">
-                <h2 class="section-title">💼 项目展示</h2>
-                <div class="card-grid">
-                    <div class="card project-card">
-                        <h3>📄 简历网站</h3>
-                        <p>个人简历网站，两个版本：现代科技风（蓝紫渐变）和复古印刷风（棕色系）。</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">GitHub Pages</span>
-                            <span class="tech-tag">HTML/CSS</span>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <a href="https://darwin788.github.io/resume/" target="_blank">蓝紫版 →</a>
-                            <span style="margin: 0 0.5rem;">|</span>
-                            <a href="https://darwin788.github.io/resume-brown/" target="_blank">棕色版 →</a>
-                        </div>
-                    </div>
-                    <div class="card project-card">
-                        <h3>📱 小红书内容体系</h3>
-                        <p>植发/医美 IP 文案方法论，转化率优化策略，ROI 提升实战经验分享。</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">内容运营</span>
-                            <span class="tech-tag">KOL/KOS</span>
-                            <span class="tech-tag">小红书</span>
-                        </div>
-                    </div>
-                    <div class="card project-card">
-                        <h3>🤖 AI 助手开发</h3>
-                        <p>基于 OpenClaw 框架的智能助手开发，实现自动化工作流和智能内容创作。</p>
-                        <div class="tech-stack">
-                            <span class="tech-tag">OpenClaw</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">AI Automation</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-center mt-1">
-                    <a href="projects.html" class="btn btn-outline">查看全部项目 →</a>
-                </p>
-            </section>
-
-            <!-- 技能标签 -->
-            <section class="mb-2">
-                <h2 class="section-title">🏷️ 热门标签</h2>
-                <div class="tags-container">
-                    <div class="tag-cloud" id="home-tags">
-                        <!-- 由 JS 动态渲染 -->
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>快速导航</h4>
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="blog.html">文章</a></li>
-                    <li><a href="about.html">关于我</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>项目链接</h4>
-                <ul>
-                    <li><a href="https://github.com/Darwin788" target="_blank">GitHub</a></li>
-                    <li><a href="https://darwin788.github.io/resume/" target="_blank">简历-蓝紫版</a></li>
-                    <li><a href="https://darwin788.github.io/resume-brown/" target="_blank">简历-棕色版</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>联系方式</h4>
-                <ul>
-                    <li>📧 448864057@qq.com</li>
-                    <li>🐱 GitHub: Darwin788</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Darwin788. 页面托管于 GitHub Pages.</p>
-            <p>医美内容运营 | 小红书 KOS | 转化率优化</p>
-        </div>
+    <footer>
+        <p>© 2026 Darwin788. 页面托管于 GitHub Pages.</p>
+        <p>最后更新: 2026年3月6日</p>
     </footer>
-
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        // 首页特殊渲染：最新3篇文章
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.getElementById('latest-articles');
-            if (container && typeof articles !== 'undefined') {
-                container.innerHTML = articles.slice(0, 3).map(article => `
-                    <article class="card article-card" onclick="location.href='articles/${article.id}.html'">
-                        <div class="meta">${article.date} · ${article.category}</div>
-                        <h3>${article.title}</h3>
-                        <p class="excerpt">${article.excerpt}</p>
-                        <div class="article-tags">
-                            ${article.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                        </div>
-                    </article>
-                `).join('');
-            }
-
-            // 标签云
-            const tagsContainer = document.getElementById('home-tags');
-            if (tagsContainer && typeof tagCounts !== 'undefined') {
-                tagsContainer.innerHTML = Object.entries(tagCounts)
-                    .sort((a, b) => b[1] - a[1])
-                    .slice(0, 8)
-                    .map(([tag, count]) => `
-                        <a href="blog.html?tag=${tag}" class="tag-item">${tag}</a>
-                    `).join('');
-            }
-        });
-    </script>
 </body>
 </html>
